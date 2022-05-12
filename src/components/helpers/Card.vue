@@ -1,12 +1,7 @@
 <template>
-  <div class="my-3 mx-3">
+  <div class="m-3 p-3">
     <div
-      class="card smcard"
-      :class="{
-        'pcard-dark': nightMode,
-        pcard: !nightMode,
-        'bg-dark3': nightMode,
-      }"
+      class="card smcard bg-green-300 dark:bg-gray-700"
     >
       <div style="height: 180px;">
         <img
@@ -15,20 +10,19 @@
           alt="Card image cap"
         />
       </div>
-      <div class="card-body pborder-top">
-        <h5 class="title2">{{ portfolio.name }}</h5>
+      <div class="grow shrink basis-auto p-5 pborder-top text-stone-900 dark:text-zinc-50">
+        <h5 class="text-lg">{{ portfolio.name }}</h5>
         <div>
           <div class="pb-1 bheight">
             <span
-              class="badge mr-2 mb-2 "
+              class="badge bg-green-500 dark:bg-gray-900 p-1 rounded mr-2 mb-2 "
               v-for="tech in portfolio.technologies"
               :key="tech"
-              :class="{ 'bg-dark4': nightMode }"
               >{{ tech }}</span
             >
           </div>
           <p
-            class="title3 m-0 pb-2 pheight pt-1"
+            class="text-sm m-0 pb-2 pheight pt-1"
             v-html="
               portfolio.description.length > 100
                 ? portfolio.description.substring(0, 105) + '...'
@@ -40,14 +34,14 @@
         <div class="text-center mt-2">
           <button
             href=""
-            class="btn-sm btn btn-outline-secondary no-outline"
+            class="inline-block dark:border-gray-900 hover:bg-green-500 border-green-500 border-2 dark:border-2 p-1 rounded-md dark:hover:bg-gray-500 dark:hover:border-gray-500 hover:font-bold"
             @click.prevent="showModal"
           >
             read more
           </button>
           <button
             href="#"
-            class="btn-sm btn btn-outline-secondary no-outline ml-4"
+            class="ml-4 inline-block hover:bg-green-500 border-green-500 border-2 dark:border-gray-900 dark:border-2 p-1 rounded-md dark:hover:bg-gray-500 dark:hover:border-gray-500 hover:font-bold"
             v-if="portfolio.visit"
             @click.prevent="open(portfolio.visit)"
           >
@@ -66,10 +60,7 @@ export default {
   props: {
     portfolio: {
       type: Object,
-    },
-    nightMode: {
-      type: Boolean,
-    },
+    }
   },
   methods: {
     open(url) {
@@ -78,7 +69,7 @@ export default {
     showModal() {
       this.$emit("show", this.portfolio);
     },
-  },
+  }
 };
 </script>
 
@@ -89,6 +80,12 @@ img {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
+}
+
+.card-img-top{
+  width: 100%;
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
 }
 
 .img-div img {
@@ -122,90 +119,10 @@ div.img-div {
   border-top: 1px solid rgb(193, 193, 193);
 }
 
-.pcard {
-  background-color: rgb(255, 255, 255);
-  border-radius: 7px;
-  border: none;
-  box-shadow: 1px 1px 12px rgb(233, 233, 233);
-  transition: all 0.5s;
-  height: 460px;
-}
-
-.pcard:hover {
-  transition: all 0.5s;
-  /* cursor: pointer; */
-  box-shadow: 1px 1px 15px rgb(216, 216, 216);
-}
-
-.pcard-dark {
-  border-radius: 7px;
-  border: none;
-  background-color: #30363a !important;
-  /* box-shadow: 1px 1px 12px rgb(53, 53, 53); */
-  transition: all 0.5s;
-  height: 460px;
-}
-
-.pcard-dark:hover {
-  transition: all 0.5s;
-  /* cursor: pointer; */
-  box-shadow: 1px 1px 12px rgb(53, 53, 53);
-}
-
-.pcard-body {
-  border-top: 1px solid rgb(220, 220, 220);
-  z-index: -1;
-  background-color: rgb(253, 254, 255);
-}
-
-.title {
-  font-size: 30px;
-  font-weight: 500;
-}
-.title1 {
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.title2 {
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.title3 {
-  font-size: 16px;
-  font-weight: 400;
-}
-
 .badge {
-  background-color: #bbd4dd;
   transition: all 0.5s;
   font-weight: 500;
   font-size: 13px;
-}
-
-.btn {
-  border-color: #759CC9;
-  color: #759CC9;
-}
-
-.btn:hover {
-  background-color: #759CC9;
-  border-color: #759CC9;
-  color: white;
-}
-
-.btn:focus {
-  background-color: #759CC9;
-  border-color: #759CC9;
-  color: white;
-}
-
-.bg-dark3 {
-  background-color: rgb(82, 82, 82);
-}
-
-.bg-dark4 {
-  background-color: #494e55 !important;
+  display: inline-block;
 }
 </style>

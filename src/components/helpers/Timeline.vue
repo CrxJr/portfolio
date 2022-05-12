@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="w-full">
     <div class="mx-3 mt-3 mb-5">
       <div class="flex flex-wrap">
         <div class="basis-auto">
           <p
-            class="text-2xl dark:text-orange-200 font-bold"
+            class="text-2xl dark:text-gray-200 font-bold"
           >
             {{ data.title }}
           </p>
@@ -14,18 +14,18 @@
             :key="e.name"
             :style="{ 'transition-delay': idx / 4.2 + 's' }"
           >
-            <li class="m-0 pb-2">
+            <li class="m-0 pb-2 before:border-green-300 before:dark:border-gray-500 before:bg-green-300 before:dark:bg-gray-500">
               <div>
-                <div class="px-4 text-lg dark:text-orange-100 font-semibold">{{ e.name }}, {{ e.place }}</div>
-                <div class="px-2 text-base dark:text-orange-200">
+                <div class="px-4 text-lg dark:text-gray-100 font-semibold">{{ e.name }}, {{ e.place }}</div>
+                <div class="px-2 text-base dark:text-gray-200">
                   {{ e.degree || e.position }}
                 </div>
-                <div class="px-2 date dark:text-orange-200 font-medium">{{ e.date }}</div>
+                <div class="px-2 date dark:text-gray-200 font-medium">{{ e.date }}</div>
                 <div class="px-2 py-2" style="text-align: justify;">
                   {{ e.description }}
                 </div>
                 <span
-                  class="rounded mx-2 p-2 mb-2 inline-block dark:bg-red-400 bg-green-300 dark:text-stone-900"
+                  class="rounded mx-2 p-2 mb-2 inline-block dark:bg-gray-500 bg-green-300 dark:text-gray-200"
                   v-for="s in e.skills"
                   :key="s"
                   >{{ s }}</span
@@ -79,11 +79,10 @@ ul.timeline > li {
 }
 ul.timeline > li:before {
   content: " ";
-  background: #86efac;
   display: inline-block;
   position: absolute;
   border-radius: 50%;
-  border: 2px solid #86efac;
+  border: 2px solid;
   left: 0px;
   width: 25px;
   height: 25px;

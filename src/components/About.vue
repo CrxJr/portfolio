@@ -4,15 +4,15 @@
   >
     <div class="container mx-auto px-4">
       <div
-        class="text-center"
+        class="text-center py-3"
       >
         <span
-          class="dark:text-zinc-50 text-stone-900 font-medium text-center text-4xl text-center"
+          class="dark:text-zinc-50 text-stone-900 font-medium text-center text-3xl text-center"
           >About Me.</span
         >
       </div>
       <hr
-        class="text-center mx-10"
+        class="mx-auto w-1/2 border-black dark:border-inherit"
       />
       <div class="flex flex-wrap">
         <div class="w-full xl:basis-1/2 lg:basis-1/2 md:basis-1/2">

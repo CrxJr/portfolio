@@ -1,5 +1,5 @@
 <template>
-  <div style="overflow: auto;">
+  <div class="overflow-auto">
     <div class="prow">
       <div
         class="pcolumn"

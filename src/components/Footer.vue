@@ -1,33 +1,32 @@
 <template>
-  <div class="bg-secondary">
-    <div class="container py-3">
-      <div class="row pt-1 align-items-center">
+  <div class="dark:bg-gray-800 bg-white text-stone-900 dark:text-white">
+    <div class="container mx-auto py-3">
+      <div class="flex flex-wrap pt-1 align-items-center">
         <div
-            class="col-xl-6 col-bg-6 col-md-6 col-sm-12 pbelow"
-            style="color: white;"
+            class="xl:basis-1/2 lg:basis-1/2 md:basis-1/2 sm:basis-1/2 sm:pb-5 sm:text-center"
         >
-          <span>© 2021 Copyright: Cristian Cantillo</span>
+          <span class="font-bold">© 2021 Cristian Cantillo Theme</span>
         </div>
 
-        <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12">
+        <div class="xl:basis-1/2 lg:basis-1/2 md:basis-1/2 sm:basis-1/2">
           <div class="text-center">
             <button
-                class="btn btn-outline-secondary mx-2 "
+                class="text-2xl outline-none mx-2"
                 @click="open('linkedin')"
             >
-              <i class="fab fa-linkedin"></i>
+              <i class="dark:text-zinc-50 text-slate-900 fab fa-linkedin"></i>
             </button>
             <button
-                class="btn btn-outline-secondary mx-2"
+                class="text-2xl outline-none mx-2"
                 @click="open('github')"
             >
-              <i class="fab fa-github"></i>
+              <i class="dark:text-zinc-50 text-slate-900 fab fa-github"></i>
             </button>
             <button
-                class="btn btn-outline-secondary mx-2"
+                class="text-2xl outline-none mx-2"
                 @click="open('resume')"
             >
-              <i class="fa fa-file"></i>
+              <i class="dark:text-zinc-50 text-slate-900 fa fa-file"></i>
             </button>
           </div>
         </div>
@@ -66,33 +65,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-span {
-  font-weight: 500;
-}
-
-.btn {
-  border-color: white;
-  color: white;
-}
-
-.btn:hover {
-  background-color: white;
-  border-color: white;
-  color: gray;
-}
-
-.btn:focus {
-  background-color: white;
-  border-color: white;
-  color: gray;
-}
-
-@media screen and (max-width: 580px) {
-  .pbelow {
-    padding-bottom: 20px;
-    text-align: center;
-  }
-}
-</style>

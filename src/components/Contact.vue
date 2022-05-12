@@ -1,48 +1,30 @@
 <template>
   <div
-      class="py-4 p-st"
-      :class="{
-      'bg-light': !nightMode,
-      'bg-dark2': nightMode,
-      'text-light': nightMode,
-    }"
+      class="py-4 p-st dark:bg-gray-700 bg-green-300 text-stone-900 dark:text-gray-400"
   >
-    <div class="container">
+    <div class="container mx-auto px-4">
       <div
           class="text-center"
-          data-aos="fade"
-          data-aos-once="true"
-          data-aos-duration="1000"
       >
         <span
-            class="title text-center"
-            :class="{ pgray: !nightMode, 'text-light': nightMode }"
+            class="title text-center dark:text-zinc-50 text-stone-900"
         >Contact.</span
         >
       </div>
       <hr
-          width="50%"
-          :class="{ pgray: !nightMode, 'bg-secondary': nightMode }"
+          class="mx-auto w-1/2 border-black dark:border-inherit"
       />
       <br />
       <div class="text-center">
         <div
             class="mb-3"
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-duration="1000"
         >
           <input
               type="text"
               name="user_name"
               v-model="name"
-              placeholder="name"
-              class="pinput"
-              :class="{
-              pgray: !nightMode,
-              'pgray-dark': nightMode,
-              'text-light': nightMode,
-            }"
+              placeholder="Name"
+              class="pinput dark:bg-zinc-400"
               style="transition-delay: 0.2s"
           />
         </div>
@@ -57,45 +39,28 @@
               type="email"
               name="user_email"
               v-model="email"
-              placeholder="email"
-              class="pinput"
-              :class="{
-              pgray: !nightMode,
-              'pgray-dark': nightMode,
-              'text-light': nightMode,
-            }"
+              placeholder="Email"
+              class="pinput dark:bg-zinc-400"
               style="transition-delay: 0.4s"
           />
         </div>
 
         <div
             class="my-3"
-            data-aos="fade-up"
-            data-aos-once="true"
-            data-aos-duration="1000"
         >
           <textarea
               name="message"
               v-model="text"
-              placeholder="message"
-              class="pinput"
+              placeholder="Message"
+              class="pinput dark:bg-zinc-400"
               rows="4"
-              :class="{
-              pgray: !nightMode,
-              'pgray-dark': nightMode,
-              'text-light': nightMode,
-            }"
               style="transition-delay: 0.6s"
           ></textarea>
         </div>
 
         <button
             @click.prevent="sendEmail"
-            class="mt-1 btn mb-3"
-            data-aos="fade"
-            data-aos-once="true"
-            data-aos-duration="1000"
-            data-aos-offset="50"
+            class="mt-1 mb-3 mx-auto w-1/6 rounded dark:text-zinc-50 hover:font-bold hover:bg-green-500 border-2 border-green-500 dark:border-gray-800 dark:hover:bg-gray-800"
         >
           Send
         </button>
@@ -123,11 +88,6 @@ export default {
   components: {
     Snackbar,
   },
-  props: {
-    nightMode: {
-      type: Boolean,
-    },
-  },
   data() {
     return {
       email: "",
@@ -149,7 +109,7 @@ export default {
     sendEmail() {
       if (!this.email || !this.name || !this.text) {
         this.showSnackbar = true;
-        this.snackbarMessage = "Please all the fields";
+        this.snackbarMessage = "Please fill all the fields";
         this.snackbarColor = "#64808E";
       } else {
         var obj = {
@@ -195,20 +155,6 @@ export default {
   font-size: 30px;
   font-weight: 500;
 }
-.title1 {
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.title2 {
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.title3 {
-  font-size: 16px;
-  font-weight: 400;
-}
 
 .pinput {
   font-size: 18px;
@@ -218,10 +164,9 @@ export default {
   padding: 10px;
   width: 50%;
   transition: all 1s;
-  background-color: #b3b3cc;
 }
 
-.btn {
+/*.btn {
   border-color: #759CC9;
   color: #759CC9;
   width: 50%;
@@ -237,7 +182,7 @@ export default {
   background-color: #759CC9;
   border-color: #759CC9;
   color: white;
-}
+}*/
 
 .pgray-dark {
   background-color: #3c4148 !important;

@@ -2,11 +2,11 @@
   <div id="app">
     <Navbar @scroll="scrollTo" @nightMode="switchMode" :nightMode="nightMode" />
     <div class="parent">
-      <Home />
+      <Home/>
       <About id="about"/>
       <Skills id="skills"/>
-      <Portfolio id="portfolio" :nightMode="nightMode" />
-      <Contact id="contact" :nightMode="nightMode" />
+      <Portfolio id="portfolio"/>
+      <Contact id="contact"/>
       <Footer :nightMode="nightMode" />
     </div>
   </div>

@@ -3,19 +3,14 @@
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div
-          class="modal-container"
-          :class="{
-            'bg-light': !nightMode,
-            'bg-dark': nightMode,
-            'text-light': nightMode,
-          }"
+          class="modal-container xl:w-3/6 lg:w-4/6 md:w-10/12 sm:w-10/12 bg-white dark:bg-gray-600"
         >
           <div class="title1 px-4 pt-3">
             <span
               ><a
                 href="#"
                 @click.prevent="open(portfolio.visit)"
-                :class="{ 'text-light': nightMode }"
+                class="dark:text-white"
                 >{{ portfolio.name }}</a
               ></span
             >
@@ -27,13 +22,11 @@
             ></a>
             <hr
               class="my-1"
-              :class="{ pgray: !nightMode, 'bg-secondary': nightMode }"
             />
           </div>
           <div class="modal-body my-0 pb-0 px-4 pt-0">
             <div
               class="mb-2 date"
-              :class="{ 'text-light': nightMode, pbgray: nightMode }"
             >
               <span>{{ portfolio.date }} • {{ portfolio.category }}</span>
             </div>
@@ -42,12 +35,11 @@
                 class="badge mr-2 mb-2"
                 v-for="tech in portfolio.technologies"
                 :key="tech"
-                :class="{ 'bg-dark4': nightMode }"
                 >{{ tech }}</span
               >
             </div>
 
-            <div style="text-align: justify;">
+            <div class="justify-center">
               <span v-html="portfolio.description"></span>
             </div>
             <hr />
@@ -59,12 +51,11 @@
           <div class="text-center pb-3">
             <hr
               class="mt-1 mb-3"
-              :class="{ pgray: !nightMode, 'bg-secondary': nightMode }"
             />
-            <button class="btn w-25 mr-3" @click="open(portfolio.github)">
+            <button class="w-25 mr-3" @click="open(portfolio.github)">
               github
             </button>
-            <button class="btn w-25" @click="$emit('close')">close</button>
+            <button class="w-25" @click="$emit('close')">close</button>
           </div>
         </div>
       </div>
@@ -149,7 +140,6 @@ a:hover {
 }
 
 .modal-container {
-  width: 40%;
   max-height: 70%;
   margin: 0px auto;
   border-radius: 7px;
@@ -159,23 +149,6 @@ a:hover {
   display: flex; /*added*/
 }
 
-@media screen and (max-width: 1600px) {
-  .modal-container {
-    width: 60%;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .modal-container {
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 580px) {
-  .modal-container {
-    width: 90%;
-  }
-}
 
 .modal-body {
   margin: 20px 0;
@@ -227,24 +200,4 @@ a:hover {
   box-shadow: 2px 2px 5px rgb(179, 179, 179);
 }
 
-.btn {
-  border-color: #759CC9;
-  color: #759CC9;
-}
-
-.btn:hover {
-  background-color: #759CC9;
-  border-color: #759CC9;
-  color: white;
-}
-
-.btn:focus {
-  background-color: #759CC9;
-  border-color: #759CC9;
-  color: white;
-}
-
-.bg-dark4 {
-  background-color: #494e55 !important;
-}
 </style>

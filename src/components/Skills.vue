@@ -1,28 +1,28 @@
 <template>
-  <div class="p-st py-4 dark:bg-red-500 bg-green-300 left-0 right-0 text-stone-900 dark:text-gray-400">
+  <div class="p-st py-4 dark:bg-gray-700 bg-green-300 left-0 right-0 text-stone-900 dark:text-gray-400">
     <div class="container mx-auto px-4">
       <div
-        class="text-center"
+        class="text-center py-3"
       >
         <span
-          class="dark:text-zinc-50 text-stone-900 font-medium text-4xl text-center"
+          class="dark:text-zinc-50 text-stone-900 font-medium text-3xl text-center"
           >Skills.</span
         >
       </div>
       <hr
-        class="text-center mx-10"
+        class="w-1/2 mx-auto border-black dark:border-inherit"
       />
       <br />
       <div class="text-center pb-5 flex flex-wrap px-4">
         <div
-          class="w-full basis-1/3"
+          class="w-full basis-1/3 pb-10"
           v-for="(skill, idx) in skills"
           :key="skill.title"
           :style="{ 'transition-delay': idx / 4.2 + 's' }"
         >
           <div class="text-lg"><i :class="skill.icon"></i></div>
           <hr
-              class="text-center mx-10"
+              class="mx-auto w-1/2 border-black dark:border-inherit"
           />
           <div class="text-lg pt-2 dark:text-stone-50 text-stone-900">{{ skill.title }}</div>
           <span class="text-base dark:text-stone-50 text-stone-900">{{ skill.info.join(", ") }}</span>

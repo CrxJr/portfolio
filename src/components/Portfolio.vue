@@ -1,36 +1,26 @@
 <template>
   <div
-      class="py-4 p-st"
-      :class="{
-      'bg-light': !nightMode,
-      'bg-dark2': nightMode,
-      'text-light': nightMode,
-    }"
+      class="py-4 p-st bg-green-200 dark:bg-gray-800"
   >
-    <div class="container">
+    <div class="container mx-auto px-4">
       <div
-          class="text-center"
-          data-aos="fade"
-          data-aos-once="true"
-          data-aos-duration="1000"
+          class="text-center py-3"
       >
         <span
-            class="title text-center"
-            :class="{ pgray: !nightMode, 'text-light': nightMode }"
+            class="title text-center text-stone-900 dark:text-zinc-50"
         >Portfolio.</span
         >
       </div>
       <hr
-          width="50%"
-          :class="{ pgray: !nightMode, 'bg-secondary': nightMode }"
+          class="mx-auto w-1/2 border-black dark:border-inherit"
       />
 
-      <vue-tabs :activeTextColor="!nightMode ? '#535A5E' : '#dfdfdf'">
-        <v-tab title="development">
+      <vue-tabs active-text-color="text-zinc-50" class="text-zinc-50">
+<!--        <v-tab title="development">-->
           <br />
-          <div class="row">
+          <div class="flex flex-wrap">
             <div
-                class="col-xl-4 col-bg-4 col-md-6 col-sm-12"
+                class="xl:basis-1/3 lg:basis-1/3 md:basis-1/2 w-full"
                 v-for="(portfolio, idx) in portfolio_info"
                 :key="portfolio.name"
             >
@@ -39,7 +29,6 @@
                   :portfolio="portfolio"
                   @show="showModalFn"
                   data-aos="fade-up"
-                  :nightMode="nightMode"
                   data-aos-offset="100"
                   data-aos-delay="10"
                   data-aos-duration="500"
@@ -50,9 +39,9 @@
             </div>
           </div>
           <div class="text-center py-3" v-if="showBtn !== 'show less'">
-            <button class="btn" @click.prevent="showMore">{{ showBtn }}</button>
+            <button class="inline-block text-stone-900 dark:text-zinc-50 border-2 border-green-500 hover:bg-green-500 dark:border-gray-900 dark:border-2 p-1 rounded-md dark:hover:bg-gray-500 dark:hover:border-gray-500 hover:font-bold" @click.prevent="showMore">{{ showBtn }}</button>
           </div>
-        </v-tab>
+<!--        </v-tab>-->
       </vue-tabs>
     </div>
     <transition name="modal">
@@ -61,16 +50,6 @@
           @close="closeModal"
           v-if="showModal"
           :portfolio="modal_info"
-          :nightMode="nightMode"
-      />
-    </transition>
-    <transition name="modal">
-      <DesignModal
-          :showModal="showDesignModal"
-          @close="closeModal"
-          v-if="showDesignModal"
-          :portfolio="design_modal_info"
-          :nightMode="nightMode"
       />
     </transition>
   </div>
@@ -97,11 +76,13 @@ export default {
     Card,
     Modal,
     VueTabs,
+    // eslint-disable-next-line vue/no-unused-components
     VTab,
     // eslint-disable-next-line vue/no-unused-components
     VueperSlides,
     // eslint-disable-next-line vue/no-unused-components
     VueperSlide,
+    // eslint-disable-next-line vue/no-unused-components
     DesignModal,
   },
   props: {
@@ -112,7 +93,6 @@ export default {
   data() {
     return {
       all_info: info.portfolio,
-      desgin_info: info.portfolio_design,
       portfolio_info: [],
       showModal: false,
       showDesignModal: false,

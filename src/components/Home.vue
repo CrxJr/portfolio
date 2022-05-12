@@ -1,6 +1,6 @@
 <template>
   <div
-      class="pt-10 dark:bg-red-500 bg-green-300 left-0 right-0"
+      class="pt-10 dark:bg-gray-700 bg-green-300 left-0 right-0"
   >
     <div
         class="container mx-auto px-4"
