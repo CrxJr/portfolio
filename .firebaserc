@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "portfolio-c17aa"
-  }
+    "default": "cristian-canc",
+    "portfolio": "cristian-canc"
+  },
+  "targets": {}
 }
