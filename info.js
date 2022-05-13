@@ -127,6 +127,30 @@ let info = {
           "into a more modern looking website as well as including a management system to help the director manage the organization.  "
     },
   ],
+  blog: [
+    {
+      name: "First Blog",
+      date: "May 12, 2022",
+      technologies: ["Javascript", "Html", "CSS", "Ajax", "jQuery"],
+      pictures: [
+        {
+          img: require("./src/assets/blog/UsefulTrash.png"),
+        },
+      ],
+      desc: "Description Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure tempore aut neque consectetur voluptatem quam nihil, facere earum adipisci, animi beatae dicta maiores, ipsam delectus ab molestias dolorum aperiam? Sapiente?",
+    },
+    {
+      name: "Second Blog",
+      date: "May 12, 2022",
+      technologies: ["Javascript", "Html", "CSS", "Ajax", "jQuery"],
+      pictures: [
+        {
+          img: require("./src/assets/blog/UsefulTrash.png"),
+        },
+      ],
+      desc: "Description Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure tempore aut neque consectetur voluptatem quam nihil, facere earum adipisci, animi beatae dicta maiores, ipsam delectus ab molestias dolorum aperiam? Sapiente?",
+    }
+  ],
 };
 
 export default info;

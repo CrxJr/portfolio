@@ -3,58 +3,54 @@
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div
-          class="modal-container xl:w-3/6 lg:w-4/6 md:w-10/12 sm:w-10/12 bg-white dark:bg-gray-600"
+            class="modal-container xl:w-3/6 lg:w-4/6 md:w-10/12 sm:w-10/12 bg-white dark:bg-gray-600"
         >
           <div class="title1 px-4 pt-3">
             <span
-              ><a
+            ><a
                 href="#"
-                @click.prevent="open(portfolio.visit)"
                 class="dark:text-white"
-                >{{ portfolio.name }}</a
-              ></span
+            >{{ blog.name }}</a
+            ></span
             >
             <a
-              class="float-right dark:text-white text-stone-900"
-              style="font-size: 18px;"
-              @click="$emit('close')"
-              ><i class="fas fa-times"></i
+                class="float-right dark:text-white text-stone-900"
+                style="font-size: 18px;"
+                @click="$emit('close')"
+            ><i class="fas fa-times"></i
             ></a>
             <hr
-              class="my-1"
+                class="my-1"
             />
           </div>
           <div class="modal-body my-0 pb-0 px-4 pt-0">
             <div
-              class="mb-2 date text-stone-900 dark:text-zinc-50"
+                class="mb-2 date text-stone-900 dark:text-zinc-50"
             >
-              <span>{{ portfolio.date }} • {{ portfolio.category }}</span>
+              <span>{{ blog.date }}</span>
             </div>
             <div class="pb-1 bheight text-stone-900 dark:text-zinc-50">
               <span
-                class="badge mr-2 mb-2 bg-green-500 dark:bg-gray-900 p-1 rounded"
-                v-for="tech in portfolio.technologies"
-                :key="tech"
-                >{{ tech }}</span
+                  class="badge mr-2 mb-2 bg-green-500 dark:bg-gray-900 p-1 rounded"
+                  v-for="tech in blog.technologies"
+                  :key="tech"
+              >{{ tech }}</span
               >
             </div>
 
             <div class="justify-center text-stone-900 dark:text-zinc-50">
-              <span v-html="portfolio.description"></span>
+              <span v-html="blog.desc"></span>
             </div>
             <hr />
             <div>
-              <Gallery :images="portfolio.pictures" />
+              <Gallery :images="blog.pictures" />
             </div>
           </div>
 
           <div class="text-center pb-3">
             <hr
-              class="mt-1 mb-3"
+                class="mt-1 mb-3"
             />
-            <button class="inline-block text-stone-900 dark:text-zinc-50 border-2 border-green-500 hover:bg-green-500 dark:border-gray-900 dark:border-2 p-1 rounded-md dark:hover:bg-gray-500 dark:hover:border-gray-500 hover:font-bold mr-5" @click="open(portfolio.github)">
-              github
-            </button>
             <button class="inline-block text-stone-900 dark:text-zinc-50 border-2 border-green-500 hover:bg-green-500 dark:border-gray-900 dark:border-2 p-1 rounded-md dark:hover:bg-gray-500 dark:hover:border-gray-500 hover:font-bold" @click="$emit('close')">close</button>
           </div>
         </div>
@@ -64,12 +60,11 @@
 </template>
 
 <script>
-import Carousel from "./Carousel";
-import Gallery from "./Gallery";
+import Carousel from "@/components/helpers/Carousel";
+import Gallery from "@/components/helpers/Gallery";
 
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "Modal",
+  name: "BlogModal",
   components: {
     // eslint-disable-next-line vue/no-unused-components
     Carousel,
@@ -79,19 +74,14 @@ export default {
     showModal: {
       type: Boolean,
     },
-    portfolio: {
+    blog: {
       type: Object,
     },
   },
   created() {
     document.getElementsByTagName("body")[0].classList.add("modal-open");
   },
-  methods: {
-    open(url) {
-      window.open(url, "_blank");
-    },
-  },
-};
+}
 </script>
 
 <style scoped>
@@ -152,36 +142,14 @@ a:hover {
   max-height: inherit;
 }
 
-.modal-enter {
-  opacity: 0;
-}
-
-.modal-leave-active {
-  opacity: 0;
-}
-
 .modal-enter .modal-container,
 .modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
 
-.title {
-  font-size: 30px;
-  font-weight: 500;
-}
 .title1 {
   font-size: 24px;
-  font-weight: 400;
-}
-
-.title2 {
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.title3 {
-  font-size: 16px;
   font-weight: 400;
 }
 

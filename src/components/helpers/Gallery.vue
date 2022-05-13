@@ -109,6 +109,8 @@ export default {
 .g-img {
   cursor: pointer;
   transition: all 0.5s;
+  height: 500px;
+  margin: auto;
 }
 .g-img:hover {
   opacity: 0.7;

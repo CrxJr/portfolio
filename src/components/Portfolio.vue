@@ -15,7 +15,7 @@
           class="mx-auto w-1/2 border-black dark:border-inherit"
       />
 
-      <vue-tabs active-text-color="text-zinc-50" class="text-zinc-50">
+      <vue-tabs active-text-color="text-zinc-50">
 <!--        <v-tab title="development">-->
           <br />
           <div class="flex flex-wrap">
@@ -59,7 +59,6 @@
 <script>
 import Card from "./helpers/Card";
 import Modal from "./helpers/Modal";
-import DesignModal from "./helpers/DesignModal";
 // eslint-disable-next-line no-unused-vars
 import Carousel from "./helpers/Carousel";
 import info from "../../info";
@@ -83,20 +82,12 @@ export default {
     VueperSlides,
     // eslint-disable-next-line vue/no-unused-components
     VueperSlide,
-    // eslint-disable-next-line vue/no-unused-components
-    DesignModal,
-  },
-  props: {
-    nightMode: {
-      type: Boolean,
-    },
   },
   data() {
     return {
       all_info: info.portfolio,
       portfolio_info: [],
       showModal: false,
-      showDesignModal: false,
       modal_info: {},
       design_modal_info: {},
       number: 2,
@@ -123,25 +114,13 @@ export default {
     },
   },
   methods: {
-    next() {
-      this.$refs.flickity.next();
-    },
-
-    previous() {
-      this.$refs.flickity.previous();
-    },
     closeModal() {
       this.showModal = false;
-      this.showDesignModal = false;
       document.getElementsByTagName("body")[0].classList.remove("modal-open");
     },
     showModalFn(portfolio) {
       this.modal_info = portfolio;
       this.showModal = true;
-    },
-    showDesignModalFn(design_portfolio) {
-      this.design_modal_info = design_portfolio;
-      this.showDesignModal = true;
     },
     showMore() {
       if (this.number != this.all_info.length) {
@@ -175,20 +154,6 @@ export default {
 .title {
   font-size: 30px;
   font-weight: 500;
-}
-.title1 {
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.title2 {
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.title3 {
-  font-size: 16px;
-  font-weight: 400;
 }
 
 .modal-enter {

@@ -1,11 +1,11 @@
 <template>
-  <div class="dark:bg-gray-800 bg-white text-stone-900 dark:text-white">
+  <div class="bottom-0 dark:bg-gray-800 bg-white text-stone-900 dark:text-white">
     <div class="container mx-auto py-3">
       <div class="flex flex-wrap pt-1 align-items-center">
         <div
             class="xl:basis-1/2 lg:basis-1/2 md:basis-1/2 sm:basis-1/2 sm:pb-5 sm:text-center"
         >
-          <span class="font-bold">© 2021 Cristian Cantillo Theme</span>
+          <span class="font-bold">© 2021 Cristian Cantillo</span>
         </div>
 
         <div class="xl:basis-1/2 lg:basis-1/2 md:basis-1/2 sm:basis-1/2">
