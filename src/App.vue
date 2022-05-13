@@ -1,74 +1,58 @@
 <template>
   <div id="app">
-    <Navbar @scroll="scrollTo" @nightMode="switchMode" :nightMode="nightMode" />
+    <Navbar @scroll="scrollTo" />
     <div class="parent">
-      <Home/>
-      <About id="about"/>
-      <Skills id="skills"/>
-      <Portfolio id="portfolio"/>
-      <Contact id="contact"/>
-      <Footer :nightMode="nightMode" />
+      <router-view/>
+      <Footer/>
     </div>
   </div>
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
-import Home from "./components/Home";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-
 import info from "../info";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default {
   name: "App",
-  components: {
-    Navbar,
-    Home,
-    About,
-    Skills,
-    Portfolio,
-    Contact,
-    Footer,
-  },
   data() {
     return {
-      nightMode: false,
       config: info.config,
     };
   },
-  created() {
-    if (this.config.use_cookies) {
-      this.nightMode = this.$cookie.get("nightMode") === "true" ? true : false;
-    }
+  components: {
+    Navbar,
+    Footer
   },
   mounted() {
     ["about", "contact", "skills", "portfolio"].forEach((l) => {
       if (window.location.href.includes(l)) {
-        var elementPosition = document.getElementById(l).offsetTop;
-        window.scrollTo({ top: elementPosition - 35, behavior: "smooth" });
+        if(document.getElementById(l) == null)
+          this.$router.push({path:'/', hash: `#${l}`})
+        .then(function () {
+          var elementPosition = document.getElementById(l).offsetTop;
+          window.scrollTo({top: elementPosition - 35, behavior: "smooth"});
+        });
       }
     });
   },
   methods: {
-    switchMode(mode) {
-      if (this.config.use_cookies) {
-        this.$cookie.set("nightMode", mode);
-      }
-      this.nightMode = mode;
-    },
     scrollTo(ele) {
       if (ele == "home") {
         this.$router.push(`/`).catch(()=>{});
         window.scrollTo({ top: -80, behavior: "smooth" });
-      } else {
-        var elementPosition = document.getElementById(ele).offsetTop;
-        window.scrollTo({ top: elementPosition - 35, behavior: "smooth" });
-        if (this.$router.history.current.path !== `/${ele}`)
-          this.$router.push(`/${ele}`);
+      }
+      else {
+        if(document.getElementById(ele) === null)
+          this.$router.push({path:'/', hash: `#${ele}`})
+          .then(function () {
+            var elementPosition = document.getElementById(ele).offsetTop;
+            window.scrollTo({top: elementPosition - 35, behavior: "smooth"});
+          });
+        else{
+          var elementPosition = document.getElementById(ele).offsetTop;
+          window.scrollTo({top: elementPosition - 35, behavior: "smooth"});
+        }
       }
     },
   },
@@ -147,8 +131,9 @@ export default {
 
 .tooltip .tooltip-inner {
   background: #64808E;
+  padding: 2px;
   color: white;
-  border-radius: 8px;
+  border-radius: 2px;
   font-size: 10px;
   /* padding: 5px 10px 4px; */
 }

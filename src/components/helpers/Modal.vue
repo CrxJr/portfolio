@@ -15,7 +15,7 @@
               ></span
             >
             <a
-              class="pull-right"
+              class="float-right dark:text-white text-stone-900"
               style="font-size: 18px;"
               @click="$emit('close')"
               ><i class="fas fa-times"></i
@@ -26,20 +26,20 @@
           </div>
           <div class="modal-body my-0 pb-0 px-4 pt-0">
             <div
-              class="mb-2 date"
+              class="mb-2 date text-stone-900 dark:text-zinc-50"
             >
               <span>{{ portfolio.date }} • {{ portfolio.category }}</span>
             </div>
-            <div class="pb-1 bheight">
+            <div class="pb-1 bheight text-stone-900 dark:text-zinc-50">
               <span
-                class="badge mr-2 mb-2"
+                class="badge mr-2 mb-2 bg-green-500 dark:bg-gray-900 p-1 rounded"
                 v-for="tech in portfolio.technologies"
                 :key="tech"
                 >{{ tech }}</span
               >
             </div>
 
-            <div class="justify-center">
+            <div class="justify-center text-stone-900 dark:text-zinc-50">
               <span v-html="portfolio.description"></span>
             </div>
             <hr />
@@ -52,10 +52,10 @@
             <hr
               class="mt-1 mb-3"
             />
-            <button class="w-25 mr-3" @click="open(portfolio.github)">
+            <button class="inline-block text-stone-900 dark:text-zinc-50 border-2 border-green-500 hover:bg-green-500 dark:border-gray-900 dark:border-2 p-1 rounded-md dark:hover:bg-gray-500 dark:hover:border-gray-500 hover:font-bold mr-5" @click="open(portfolio.github)">
               github
             </button>
-            <button class="w-25" @click="$emit('close')">close</button>
+            <button class="inline-block text-stone-900 dark:text-zinc-50 border-2 border-green-500 hover:bg-green-500 dark:border-gray-900 dark:border-2 p-1 rounded-md dark:hover:bg-gray-500 dark:hover:border-gray-500 hover:font-bold" @click="$emit('close')">close</button>
           </div>
         </div>
       </div>
@@ -104,7 +104,6 @@ body.modal-open {
 
 a {
   text-decoration: none;
-  color: black;
   transition: all 0.2s;
   cursor: pointer;
 }
@@ -190,9 +189,10 @@ a:hover {
 }
 
 .badge {
-  background-color: #bbd4dd;
   transition: all 0.5s;
   font-weight: 500;
+  font-size: 13px;
+  display: inline-block;
 }
 
 .badge:hover {

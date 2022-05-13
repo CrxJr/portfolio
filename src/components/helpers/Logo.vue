@@ -1,8 +1,8 @@
 <template>
   <div class="logo-div">
-    <span
+    <router-link to="/"
       class="logo-title-name text-stone-900 dark:text-slate-50"
-      >{{ name }}</span
+      >{{ name }}</router-link
     >
     <span class="logo-title-dot text-stone-900 dark:text-slate-50">{{ dot }}</span>
   </div>

@@ -27,6 +27,7 @@
               <Card
                   :style="{ 'transition-delay': (idx % 3) / 4.2 + 's' }"
                   :portfolio="portfolio"
+                  class="rounded"
                   @show="showModalFn"
                   data-aos="fade-up"
                   data-aos-offset="100"

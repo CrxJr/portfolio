@@ -1,7 +1,7 @@
 <template>
   <div class="m-3 p-3">
     <div
-      class="card smcard bg-green-300 dark:bg-gray-700"
+      class="card smcard bg-green-300 dark:bg-gray-700 rounded-lg"
     >
       <div style="height: 180px;">
         <img
@@ -15,7 +15,7 @@
         <div>
           <div class="pb-1 bheight">
             <span
-              class="badge bg-green-500 dark:bg-gray-900 p-1 rounded mr-2 mb-2 "
+              class="badge bg-green-500 dark:bg-gray-900 dark:bg-gray-800 p-1 rounded mr-2 mb-2 "
               v-for="tech in portfolio.technologies"
               :key="tech"
               >{{ tech }}</span

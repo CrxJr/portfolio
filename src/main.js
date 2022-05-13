@@ -15,9 +15,24 @@ Vue.use(VueRouter)
 Vue.use(VueScrollTo)
 Vue.use(VueCookie);
 
+import Home from "./components/Pages/Home";
+import Blog from "./components/Pages/Blog";
+
 const routes = [
-  { path: '/'}
-]
+  {
+    name: "Home",
+    path: "/",
+    component: Home,
+  },
+  {
+    name: "Blog",
+    path: "/blog",
+    component: Blog,
+  },
+  {
+    path: "/:pathMatch(.*)*", redirect: "/"
+  },
+];
 
 const router = new VueRouter({
   mode:'history',

@@ -54,24 +54,24 @@
                  v-on:click="clicked1=!clicked1,clicked2=false,clicked3=false,clicked4=false,clicked5=false">About</a>
             </li>
             <li>
-              <a href="/skills" class="active:bg-stone-50 md:bg-transparent font-bold text-green block py-2 md:text-green-300 md:p-1 rounded hover:bg-green-200 dark:hover:bg-gray-400 hover:text-white dark:text-white"
+              <a href="/#skills" class="active:bg-stone-50 md:bg-transparent font-bold text-green block py-2 md:text-green-300 md:p-1 rounded hover:bg-green-200 dark:hover:bg-gray-400 hover:text-white dark:text-white"
                  @click.prevent="$emit('scroll', 'skills')" v-bind:class="{'bg-green-300 dark:bg-gray-500': clicked2, '':!clicked2}"
                  v-on:click="clicked2=!clicked2,clicked1=false,clicked3=false,clicked4=false,clicked5=false">Skills</a>
             </li>
             <li>
-              <a href="/portfolio" class="active:bg-stone-50 md:bg-transparent font-bold text-green block py-2 md:text-green-300 md:p-1 rounded hover:bg-green-200 dark:hover:bg-gray-400 hover:text-white dark:text-white"
+              <a href="/#portfolio" class="active:bg-stone-50 md:bg-transparent font-bold text-green block py-2 md:text-green-300 md:p-1 rounded hover:bg-green-200 dark:hover:bg-gray-400 hover:text-white dark:text-white"
                  @click.prevent="$emit('scroll', 'portfolio')" v-bind:class="{'bg-green-300 dark:bg-gray-500': clicked3, '':!clicked3}"
                  v-on:click="clicked3=!clicked3,clicked1=false,clicked2=false,clicked4=false,clicked5=false">Portfolio</a>
             </li>
             <li>
-              <a href="/contact" class="active:bg-stone-50 md:bg-transparent font-bold text-green block py-2 md:text-green-300 md:p-1 rounded hover:bg-green-200 dark:hover:bg-gray-400 hover:text-white dark:text-white"
+              <a href="/#contact" class="active:bg-stone-50 md:bg-transparent font-bold text-green block py-2 md:text-green-300 md:p-1 rounded hover:bg-green-200 dark:hover:bg-gray-400 hover:text-white dark:text-white"
                  @click.prevent="$emit('scroll', 'contact')" v-bind:class="{'bg-green-300 dark:bg-gray-500': clicked4, '':!clicked4}"
                  v-on:click="clicked4=!clicked4,clicked1=false,clicked2=false,clicked3=false,clicked5=false">Contact</a>
             </li>
             <li>
-              <a href="/blog" class="active:bg-stone-50 md:bg-transparent font-bold text-green block py-2 md:text-green-300 md:p-1 rounded hover:bg-green-200 dark:hover:bg-gray-400 hover:text-white dark:text-white"
+              <router-link to="/blog" class="active:bg-stone-50 md:bg-transparent font-bold text-green block py-2 md:text-green-300 md:p-1 rounded hover:bg-green-200 dark:hover:bg-gray-400 hover:text-white dark:text-white"
                  v-bind:class="{'bg-green-300 dark:bg-gray-500': clicked5, '':!clicked5}"
-                 v-on:click="clicked5=!clicked5,clicked1=false,clicked2=false,clicked3=false,clicked4=false">Blog</a>
+                 v-on:click="clicked5=!clicked5,clicked1=false,clicked2=false,clicked3=false,clicked4=false">Blog</router-link>
             </li>
           </ul>
         </div>
