@@ -27,6 +27,22 @@
   </head>
   <body>
   <script src="https://unpkg.com/flowbite@1.4.4/dist/flowbite.js"></script>
+  <script> $(function () {
+      var message = "Don't Go 😢! Cristian's Portfolio";
+      var original;
+      $(window).focus(function() {
+          if(original) {
+              document.title = original;
+          }
+      }).blur(function() {
+          var title = jQuery('title').text();
+          if(title != message) {
+              original = title;
+          }
+          document.title = message;
+      });
+  });
+  </script>
     <div id="app"></div>
   </body>
 </html>
