@@ -72,6 +72,7 @@ export default {
 .parent {
   margin-top: 38px;
   position: relative;
+  height: fit-content;
 }
 
 .pgray {

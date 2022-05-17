@@ -59,7 +59,7 @@
         </div>
 
         <button
-            @click.prevent="sendEmail"
+            @click.prevent="sendEmail" ref="sendBtn"
             class="mt-1 mb-3 mx-auto w-1/6 rounded dark:text-zinc-50 hover:font-bold hover:bg-green-500 border-2 border-green-500 dark:border-gray-800 dark:hover:bg-gray-800"
         >
           Send
@@ -107,6 +107,8 @@ export default {
       }
     },
     sendEmail() {
+      this.disableSubmit(this.$refs.sendBtn);
+
       if (!this.email || !this.name || !this.text) {
         this.showSnackbar = true;
         this.snackbarMessage = "Please fill all the fields";
@@ -130,7 +132,7 @@ export default {
                 // eslint-disable-next-line no-unused-vars
                 (result) => {
                   this.showSnackbar = true;
-                  this.snackbarMessage = "Thanks! Message recieved.";
+                  this.snackbarMessage = "Thanks! Message received.";
                   this.snackbarColor = "#1aa260";
 
                   this.email = "";
@@ -145,7 +147,17 @@ export default {
                 }
             );
       }
+      setTimeout(() => {  this.enableSubmit(this.$refs.sendBtn); }, 1500);
     },
+    disableSubmit(btn) {
+      btn.setAttribute('disabled', 'disabled');
+      this.btnOldHtml = btn.innerHTML;
+      btn.innerHTML = '<span class="fa fa-spinner fa-spin"></span> Please wait...';
+    },
+    enableSubmit(btn) {
+      btn.removeAttribute('disabled');
+      btn.innerHTML = this.btnOldHtml;
+    }
   },
 };
 </script>

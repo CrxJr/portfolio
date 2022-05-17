@@ -49,7 +49,7 @@
         <div class="hidden md:flex justify-between items-center w-full md:w-auto md:order-1" id="mobile-menu-4">
           <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
             <li>
-              <a href="/about" class="active:bg-green-500 md:bg-transparent font-bold text-green block py-2 md:text-green-300 md:p-1 rounded hover:bg-green-200 dark:hover:bg-gray-400 hover:text-white dark:text-white"
+              <a href="/#about" class="active:bg-green-500 md:bg-transparent font-bold text-green block py-2 md:text-green-300 md:p-1 rounded hover:bg-green-200 dark:hover:bg-gray-400 hover:text-white dark:text-white"
                  @click.prevent="$emit('scroll', 'about')" v-bind:class="{'bg-green-300 dark:bg-gray-500': clicked1, '':!clicked1}"
                  v-on:click="clicked1=!clicked1,clicked2=false,clicked3=false,clicked4=false,clicked5=false">About</a>
             </li>
@@ -71,7 +71,7 @@
             <li>
               <router-link to="/blog" class="active:bg-stone-50 md:bg-transparent font-bold text-green block py-2 md:text-green-300 md:p-1 rounded hover:bg-green-200 dark:hover:bg-gray-400 hover:text-white dark:text-white"
                  v-bind:class="{'bg-green-300 dark:bg-gray-500': clicked5, '':!clicked5}"
-                 v-on:click="clicked5=!clicked5,clicked1=false,clicked2=false,clicked3=false,clicked4=false">Blog</router-link>
+                 @click="clicked5=!clicked5,clicked1=false,clicked2=false,clicked3=false,clicked4=false">Blog</router-link>
             </li>
           </ul>
         </div>

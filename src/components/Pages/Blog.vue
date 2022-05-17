@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen py-4 p-st bg-green-200 dark:bg-gray-800">
+  <div class="h-full py-4 p-st bg-green-200 dark:bg-gray-800">
     <div class="container mx-auto px-4">
       <div
           class="text-center py-3"
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="text-center py-3" v-if="showBtn !== 'show less'">
-        <button class="inline-block text-stone-900 dark:text-zinc-50 border-2 border-green-500 hover:bg-green-500 dark:border-gray-900 dark:border-2 p-1 rounded-md dark:hover:bg-gray-500 dark:hover:border-gray-500 hover:font-bold" @click.prevent="showMore">{{ showBtn }}</button>
+        <button class="animate-bounce inline-block text-stone-900 dark:text-zinc-50 border-2 border-green-500 hover:bg-green-500 dark:border-gray-900 dark:border-2 p-1 rounded-md dark:hover:bg-gray-500 dark:hover:border-gray-500 hover:font-bold" @click.prevent="showMore">{{ showBtn }}</button>
       </div>
     </div>
     <transition name="modal">

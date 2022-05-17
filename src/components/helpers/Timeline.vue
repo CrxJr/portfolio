@@ -11,7 +11,7 @@
           <ul
             class="timeline m-0 pt-1"
             v-for="(e, idx) in data.data"
-            :key="e.name"
+            :key="e.position"
             :style="{ 'transition-delay': idx / 4.2 + 's' }"
           >
             <li class="m-0 pb-2 before:border-green-300 before:dark:border-gray-500 before:bg-green-300 before:dark:bg-gray-500">
@@ -25,7 +25,7 @@
                   {{ e.desc }}
                 </div>
                 <span
-                  class="rounded mx-2 p-2 mb-2 inline-block dark:bg-gray-500 bg-green-300 dark:text-gray-200"
+                  class="rounded mx-2 p-2 mb-2 inline-block dark:bg-gray-500 bg-green-300 dark:text-gray-200 dark:hover:bg-gray-400 hover:bg-green-500"
                   v-for="s in e.skills"
                   :key="s"
                   >{{ s }}</span
