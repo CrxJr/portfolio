@@ -40,7 +40,7 @@
             </div>
 
             <div class="justify-center text-stone-900 dark:text-zinc-50">
-              <span v-html="portfolio.description"></span>
+              <span v-html="portfolio.desc"></span>
             </div>
             <hr />
             <div>
