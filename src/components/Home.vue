@@ -50,10 +50,8 @@
 
 <script>
 /* eslint-disable-next-line no-unused-vars   */
-import { db, storage } from "@/firebase";
+import { db } from "@/firebase";
 import { getDocs, collection } from "firebase/firestore";
-/* eslint-disable-next-line no-unused-vars   */
-import { ref } from 'firebase/storage';
 
 import Wave from "./helpers/Wave";
 
