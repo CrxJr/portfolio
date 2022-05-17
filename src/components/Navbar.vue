@@ -81,7 +81,6 @@
 </template>
 
 <script>
-import info from "../../info.js";
 import Logo from "@/components/helpers/Logo";
 
 export default {
@@ -89,7 +88,6 @@ export default {
   name: "Navbar",
   data() {
     return {
-      navbarConfig: info.config.navbar,
       clicked1: false,
       clicked2: false,
       clicked3: false,

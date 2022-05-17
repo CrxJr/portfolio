@@ -24,7 +24,7 @@
               name="user_name"
               v-model="name"
               placeholder="Name"
-              class="pinput dark:bg-zinc-400"
+              class="pinput dark:bg-zinc-400 dark:text-zinc-50"
               style="transition-delay: 0.2s"
           />
         </div>
@@ -40,7 +40,7 @@
               name="user_email"
               v-model="email"
               placeholder="Email"
-              class="pinput dark:bg-zinc-400"
+              class="pinput dark:bg-zinc-400 dark:text-zinc-50"
               style="transition-delay: 0.4s"
           />
         </div>
@@ -52,7 +52,7 @@
               name="message"
               v-model="text"
               placeholder="Message"
-              class="pinput dark:bg-zinc-400"
+              class="pinput dark:bg-zinc-400 dark:text-zinc-50"
               rows="4"
               style="transition-delay: 0.6s"
           ></textarea>

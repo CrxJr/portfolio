@@ -9,17 +9,11 @@
 </template>
 
 <script>
-import info from "../info";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default {
   name: "App",
-  data() {
-    return {
-      config: info.config,
-    };
-  },
   components: {
     Navbar,
     Footer
@@ -56,6 +50,17 @@ export default {
       }
     },
   },
+  /*async created() {
+    const names = ['info', 'links', 'blog', 'education', 'experiences', 'skills', 'portfolio_info'];
+    for (let i in names) {
+      const querySnapshot = await getDocs(collection(db, "portfolio", 'PgQMkGL6hLNa802ngYMN', names[i]));
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        this.infos[names[i]] = doc.data();
+        console.log(doc.data());
+      });
+    }
+  }*/
 };
 </script>
 

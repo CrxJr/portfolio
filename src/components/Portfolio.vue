@@ -61,13 +61,15 @@ import Card from "./helpers/Card";
 import Modal from "./helpers/Modal";
 // eslint-disable-next-line no-unused-vars
 import Carousel from "./helpers/Carousel";
-import info from "../../info";
+
 
 import { VueTabs, VTab } from "vue-nav-tabs";
 import "vue-nav-tabs/themes/vue-tabs.css";
 
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
+import {collection, getDocs} from "firebase/firestore";
+import {db} from "@/firebase";
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -85,7 +87,7 @@ export default {
   },
   data() {
     return {
-      all_info: info.portfolio,
+      all_info: [],
       portfolio_info: [],
       showModal: false,
       modal_info: {},
@@ -93,14 +95,17 @@ export default {
       number: 2,
       showBtn: "show more",
       shower: 0,
-      data: [
-        '<div class="example-slide">Slide 1</div>',
-        '<div class="example-slide">Slide 2</div>',
-        '<div class="example-slide">Slide 3</div>',
-      ],
     };
   },
-  created() {
+  async created() {
+    let x = 0;
+    const querySnapshot = await getDocs(collection(db, "portfolio", 'PgQMkGL6hLNa802ngYMN', 'portfolio_info'));
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      this.all_info[x] = doc.data();
+      x++;
+    });
+
     for (var i = 0; i < this.number; i++) {
       this.portfolio_info.push(this.all_info[i]);
     }

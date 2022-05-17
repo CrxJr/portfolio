@@ -51,7 +51,8 @@
 import BlogModal from "../../components/helpers/BlogModal.vue";
 import BlogCard from "@/components/helpers/BlogCard";
 
-import info from "../../../info";
+import {collection, getDocs} from "firebase/firestore";
+import {db} from "@/firebase";
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -62,7 +63,7 @@ export default {
   },
   data() {
     return{
-      all_info: info.blog,
+      all_info: [],
       blog_info: [],
       showModal: false,
       modal_info: {},
@@ -71,7 +72,15 @@ export default {
       shower: 0,
     }
   },
-  created() {
+  async created() {
+    let x = 0;
+    const querySnapshot = await getDocs(collection(db, "portfolio", 'PgQMkGL6hLNa802ngYMN', 'blog'));
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      this.all_info[x] = doc.data();
+      x++;
+    });
+
     for (var i = 0; i < this.number; i++) {
       this.blog_info.push(this.all_info[i]);
     }

@@ -33,15 +33,33 @@
 </template>
 
 <script>
-import info from "../../info";
+import {collection, getDocs} from "firebase/firestore";
+import {db} from "@/firebase";
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Skills",
   data() {
     return {
-      skills: info.skills,
+      skills: [],
+      temp: [],
     };
+  },
+  methods:{
+    setInfo(){
+      this.skills = this.temp;
+    }
+  },
+  async created() {
+    let i = 0;
+    const querySnapshot = await getDocs(collection(db, "portfolio", 'PgQMkGL6hLNa802ngYMN', 'skills'));
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      this.temp[i] = doc.data();
+      i++;
+    });
+
+    this.setInfo();
   },
 };
 </script>

@@ -24,9 +24,9 @@
           <p
             class="text-sm m-0 pb-2 pheight pt-1"
             v-html="
-              portfolio.description.length > 100
-                ? portfolio.description.substring(0, 105) + '...'
-                : portfolio.description
+              portfolio.desc.length > 100
+                ? portfolio.desc.substring(0, 105) + '...'
+                : portfolio.desc
             "
           >
           </p>

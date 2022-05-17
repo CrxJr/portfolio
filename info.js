@@ -2,12 +2,6 @@ let info = {
   name: "Cristian Cantillo",
   logo_name: "Cristian",
   flat_picture: require("./src/assets/Cristian_Cantillo.jpg"),
-  config: {
-    use_cookies: true,
-    navbar: {
-      blur: false
-    }
-  },
   description:
     "I'm Cristian Cantillo, A senior Computer Science student at Champlain College with an interest in Software Development, Front-end and Back-end developing.",
   links: {
@@ -99,7 +93,7 @@ let info = {
         " Web Development Final Project "
     },
     {
-      name: "Loisirs Et Repit Sans Limites",
+      name: "Loisirs Et   Repit Sans Limites",
       pictures: [
         {
           img: require("./src/assets/portfolio/Loisirs_Sans_Limites/1.png")

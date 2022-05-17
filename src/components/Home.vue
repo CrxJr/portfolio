@@ -49,7 +49,11 @@
 </template>
 
 <script>
-import info from "../../info";
+/* eslint-disable-next-line no-unused-vars   */
+import { db, storage } from "@/firebase";
+import { getDocs, collection } from "firebase/firestore";
+/* eslint-disable-next-line no-unused-vars   */
+import { ref } from 'firebase/storage';
 
 import Wave from "./helpers/Wave";
 
@@ -62,12 +66,14 @@ export default {
   },
   data() {
     return {
-      picture: info.flat_picture,
-      description: info.description,
-      name: info.name,
-      linkedin: info.links.linkedin,
-      github: info.links.github,
-      resume: info.links.resume
+      infos: [],
+      links: [],
+      picture: '',
+      description: '',
+      name: '',
+      linkedin: '',
+      github: '',
+      resume: '',
     };
   },
   methods: {
@@ -84,7 +90,30 @@ export default {
           break;
       }
     },
+    setInfo(){
+      this.name = this.infos.name;
+      this.picture = this.infos.flat_picture;
+      this.description = this.infos.description;
+      this.github = this.links.github;
+      this.linkedin = this.links.linkedin;
+      this.resume = this.links.resume;
+    }
   },
+  async created() {
+    const querySnapshot = await getDocs(collection(db, "portfolio", 'PgQMkGL6hLNa802ngYMN', 'info'));
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+        this.infos = doc.data();
+    });
+
+    const querySnapshot2 = await getDocs(collection(db, "portfolio", 'PgQMkGL6hLNa802ngYMN', 'links'));
+    querySnapshot2.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      this.links = doc.data();
+    });
+
+    this.setInfo();
+  }
 };
 </script>
 

@@ -16,7 +16,7 @@
       />
       <div class="flex flex-wrap">
         <div class="w-full xl:basis-1/2 lg:basis-1/2 md:basis-1/2">
-          <Timeline :data="education" />
+          <Timeline :data="education"/>
         </div>
         <div class="w-full xl:basis-1/2 lg:basis-1/2 md:basis-1/2">
           <Timeline :data="experience"/>
@@ -27,8 +27,10 @@
 </template>
 
 <script>
+//import info from "../../info";
 import Timeline from "./helpers/Timeline";
-import info from "../../info";
+import {collection, getDocs} from "firebase/firestore";
+import {db} from "@/firebase";
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -40,14 +42,41 @@ export default {
     return {
       education: {
         title: "Education",
-        data: info.education,
+        data: [],
       },
       experience: {
         title: "Experiences",
-        data: info.experience,
+        data: [],
       },
+      tempEdu: [],
+      tempExp: [],
     };
   },
+  methods: {
+    setInfo(){
+      this.education.data = this.tempEdu;
+      this.experience.data = this.tempExp;
+    }
+  },
+  async created() {
+    let i = 0;
+    const querySnapshot = await getDocs(collection(db, "portfolio", 'PgQMkGL6hLNa802ngYMN', 'education'));
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      this.tempEdu[i] = doc.data();
+      i++;
+    });
+
+    let x = 0;
+    const querySnapshot2 = await getDocs(collection(db, "portfolio", 'PgQMkGL6hLNa802ngYMN', 'experiences'));
+    querySnapshot2.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      this.tempExp[x] = doc.data();
+      x++;
+    });
+
+    this.setInfo();
+  }
 };
 </script>
 

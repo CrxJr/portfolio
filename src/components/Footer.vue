@@ -37,7 +37,6 @@
 
 <script>
 import info from "../../info";
-
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Footer",
@@ -52,7 +51,7 @@ export default {
     open(link) {
       switch (link) {
         case "linkedin":
-          window.open(this.linkedin, "_blank");
+          window.open(this.$parent.links.linkedin, "_blank");
           break;
         case "github":
           window.open(this.github, "_blank");
