@@ -21,7 +21,7 @@
                   {{ e.degree || e.position }}
                 </div>
                 <div class="px-2 date dark:text-gray-200 font-medium">{{ e.date }}</div>
-                <div class="px-2 py-2" style="text-align: justify;">
+                <div class="px-2 py-2 dark:text-gray-200 font-medium" style="text-align: justify;">
                   {{ e.desc }}
                 </div>
                 <span

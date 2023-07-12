@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-slate-50 fixed top-0 left-0 right-0 z-50">
-    <nav class="border-gray-200 py-2.5 rounded dark:bg-gray-800">
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <nav class="border-gray-200 py-2.5 rounded-b-md dark:bg-gray-800">
       <div class="container mx-auto flex flex-wrap items-center justify-between">
         <a href="/" class="flex" @click.prevent="$emit('scroll', 'home')">
           <Logo />
