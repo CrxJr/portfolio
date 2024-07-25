@@ -16,7 +16,6 @@ Vue.use(VueScrollTo)
 Vue.use(VueCookie);
 
 import Home from "./components/Pages/Home";
-import Blog from "./components/Pages/Blog";
 
 const routes = [
   {
