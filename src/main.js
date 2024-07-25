@@ -25,11 +25,6 @@ const routes = [
     component: Home,
   },
   {
-    name: "Blog",
-    path: "/blog",
-    component: Blog,
-  },
-  {
     path: "/:pathMatch(.*)*", redirect: "/"
   },
 ];

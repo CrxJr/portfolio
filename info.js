@@ -14,7 +14,7 @@ let info = {
     {
       name: "Champlain College",
       place: "Saint Lambert, Canada",
-      date: "Aug, 2018 - Currently",
+      date: "Aug, 2018 - May 2022",
       degree: "College Diploma",
       description:
         "",
