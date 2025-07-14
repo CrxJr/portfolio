@@ -5,10 +5,10 @@ let info = {
   description:
     "I'm Cristian Cantillo, A senior Computer Science student at Champlain College with an interest in Software Development, Front-end and Back-end developing.",
   links: {
-    linkedin: "https://www.linkedin.com/in/cristian-cantillo-985387197/",
+    linkedin: "https://www.linkedin.com/in/crxjr/",
     github: "https://github.com/CrxJr",
     resume:
-      "https://docs.google.com/document/d/1gJMseJTXe-54v7KADPR7B_gjN5d2ofHd1-o61FW-1Wk/edit?usp=sharing"
+      "https://www.moncvparfait.fr/feedback/session/a0efee1f-0e3c-435b-964f-3c9042d168ce"
   },
   education: [
     {
@@ -34,29 +34,35 @@ let info = {
       position: "Intern",
       description:
         "",
-      skills: ["PHP", "Laravel", "MySQL", "Html5"]
+      skills: ["PHP","Laravel","MySQL","Html5","API integration"]
     },
   ],
   skills: [
     {
       title: "Language",
       info: [
-        "Python","Javascript","Java","C#", 'PHP'
+        "Python","Javascript","Java",'PHP'
       ],
       icon: "fa fa-code"
     },
     {
       title: "Front-end",
       info: [
-        "HTML5","CSS3","Bootstrap3","JQuery", "Tailwind CSS"
+        "HTML5","CSS3","Bootstrap3","JQuery","Tailwind CSS"
       ],
       icon: "fa fa-cubes"
     },
     {
       title: "Web Technologies",
-      info: ["Vue", "Laravel", "Angular"
-      ],
+      info: ["VueJS", "Laravel", "Angular"],
       icon: "fas fa-laptop-code"
+    },
+    {
+      title: "APIs",
+      info: [
+        "RESTful API","Parcelz","Freightcom","Zoho Inventory","Zoho Books","Square Up","Stripe API"
+      ],
+      icon: "fa fa-sitemap"
     },
     {
       title: "Databases",
@@ -65,7 +71,7 @@ let info = {
     },
     {
       title: "Operating systems & tools",
-      info: [ "Ubuntu", "Windows", "Agile", "Scrum", "JIRA","Firebase"],
+      info: [ "Ubuntu","Windows","Agile","Scrum","JIRA","Firebase","Zoho"],
       icon: "fas fa-tools"
     },
   ],
@@ -120,30 +126,6 @@ let info = {
         "This project was decided as a final project of my time in college. The project consists on re-modelling the page for Loisirs et Repit Sans Limites" +
           "into a more modern looking website as well as including a management system to help the director manage the organization.  "
     },
-  ],
-  blog: [
-    {
-      name: "First Blog",
-      date: "May 12, 2022",
-      technologies: ["Javascript", "Html", "CSS", "Ajax", "jQuery"],
-      pictures: [
-        {
-          img: require("./src/assets/blog/UsefulTrash.png"),
-        },
-      ],
-      desc: "Description Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure tempore aut neque consectetur voluptatem quam nihil, facere earum adipisci, animi beatae dicta maiores, ipsam delectus ab molestias dolorum aperiam? Sapiente?",
-    },
-    {
-      name: "Second Blog",
-      date: "May 12, 2022",
-      technologies: ["Javascript", "Html", "CSS", "Ajax", "jQuery"],
-      pictures: [
-        {
-          img: require("./src/assets/blog/UsefulTrash.png"),
-        },
-      ],
-      desc: "Description Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure tempore aut neque consectetur voluptatem quam nihil, facere earum adipisci, animi beatae dicta maiores, ipsam delectus ab molestias dolorum aperiam? Sapiente?",
-    }
   ],
 };
 
